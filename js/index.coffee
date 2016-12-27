@@ -14,12 +14,12 @@ advanceChar = (char) ->
 $(document).keypress (e)->
 	if(e.which == 13)
 		reset()
+	else if(typedLetters == 26)
+		return
 	else
 		advanceChar(e.which)
 		if(typedLetters == 26)
 			console.log("good job!")
-			# reset here
-			typedLetters = 0
 
 
 reset = ->

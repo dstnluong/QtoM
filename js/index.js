@@ -22,11 +22,12 @@
   $(document).keypress(function(e) {
     if (e.which === 13) {
       return reset();
+    } else if (typedLetters === 26) {
+      console.log("hi");
     } else {
       advanceChar(e.which);
       if (typedLetters === 26) {
-        console.log("good job!");
-        return typedLetters = 0;
+        return console.log("good job!");
       }
     }
   });
