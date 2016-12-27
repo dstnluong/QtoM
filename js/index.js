@@ -43,6 +43,7 @@
 
     } else {
       if (typedLetters === 0) {
+        reset();
         start();
       }
       return advanceChar(e.which);

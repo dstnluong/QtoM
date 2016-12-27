@@ -31,6 +31,7 @@ $(document).keypress (e)->
 		return
 	else
 		if(typedLetters == 0)
+			reset()
 			start()
 		advanceChar(e.which)
 
