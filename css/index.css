@@ -10,7 +10,7 @@
 	border-width: 0.5em;
 	border-radius: 0.5em;
 	background-color: white;
-	height:30vh;
+	height:35vh;
 	margin: auto;
 	width:50vw;
 }
@@ -95,4 +95,37 @@
 	border-radius: 1em;
 	width: 4em;
 	margin:auto;
+}
+
+#cookies {
+	z-index: 1;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: white;
+	visibility: hidden;
+}
+
+#cookietext {
+	margin-top: 40vh;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2em;
+}
+
+#continue {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2em;
+	border: 0.1em solid black;
+	border-radius: 1em;
+	width: 7em;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+	color: black;
 }

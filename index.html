@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/js-cookie/js-cookie/master/src/js.cookie.js"></script>
 	<script src="js/index.js"></script>
 </head>
 <body>
@@ -18,10 +19,14 @@
 		<p class="center">Speed (WPM)</p>
 		<p class="right">Fastest Time</p>
 		<p id="time" class="left">0.0</p>
-		<p id="speed" class="center">10wpm</p>
+		<p id="speed" class="center">0</p>
 		<p id="fastestTime" class="right">20s</p>
 		<p id="typeHere"><span id="typed"></span>abcdefghijklmnopqrstuvwxyz</p>
 		<p id="reset">Reset</p>
+	</div>
+	<div id="cookies">
+		<p id="cookietext">We use cookies to save your high score.<br>By clicking continue, you agree to this usage.</p>
+		<a href="javascript:hideCookies()"><p id="continue" href="thing">Continue</p></a>
 	</div>
 </body>
 </html>
