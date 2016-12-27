@@ -25,7 +25,7 @@
 }
 
 #typeHere {
-	color: #009688;
+	color: black;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
 	font-size: 2em;
@@ -36,7 +36,11 @@
 	border-radius: 0.1em;
 	clear: both;
 	width: 15em;
-	margin: auto auto 1em auto;
+	margin: 2em auto 1em auto;
+}
+
+#typed{
+	color: #009688;
 }
 
 #space{
@@ -70,14 +74,17 @@
 
 #time{
 	font-weight:bold;
+	margin-top: 0;
 }
 
 #speed{
 	font-weight:bold;
+	margin-top: 0;
 }
 
 #fastestTime{
 	font-weight:bold;
+	margin-top: 0;
 }
 
 #reset {
