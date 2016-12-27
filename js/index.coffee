@@ -10,6 +10,7 @@ advanceChar = (char) ->
 		typedLetters++
 		if(typedLetters == 26)
 			stop()
+		$("#speed").text(computeWPM())
 	else
 		console.log('no')
 
@@ -26,7 +27,13 @@ $(document).keypress (e)->
 $ ->
 	$("#reset").click -> reset()
 
+computeWPM = ->
+	currentTime = new Date()
+	Math.floor((typedLetters * 1000 * 60 / 5) / (new Date(currentTime - timeBegan)))
+
+
 # stopwatch
+# http://stackoverflow.com/questions/26329900/how-do-i-display-millisecond-in-my-stopwatch
 
 timeBegan = null
 timeStopped = null
