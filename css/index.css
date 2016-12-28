@@ -39,20 +39,16 @@
 	margin: 2em auto 1em auto;
 }
 
-#typed{
-	color: #009688;
-}
-
-#typedWrong{
-	color: #F44336;
-}
-
 .correct{
 	color: #009688;
 }
 
 .wrong{
 	color: #F44336;
+}
+
+.inactive {
+	color: #9E9E9E;
 }
 
 #space{
