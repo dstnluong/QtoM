@@ -1,7 +1,6 @@
 numberOfStartingLetters = 0
 typedLetters = 0
 typedWrongLetters = 0
-# original = '<span id="a">a</span><span id="b">b</span><span id="c">c</span><span id="d">d</span><span id="e">e</span><span id="f">f</span><span id="g">g</span><span id="h">h</span><span id="i">i</span><span id="j">j</span><span id="k">k</span><span id="l">l</span><span id="m">m</span><span id="n">n</span><span id="o">o</span><span id="p">p</span><span id="q">q</span><span id="r">r</span><span id="s">s</span><span id="t">t</span><span id="u">u</span><span id="v">v</span><span id="w">w</span><span id="x">x</span><span id="y">y</span><span id="z">z</span>'
 if(Cookies.get("time")?)
 	fastestTime = Cookies.get("time")
 else
@@ -32,6 +31,8 @@ $(document).keypress (e)->
 		reset()
 	else if(typedLetters + typedWrongLetters == 26)
 		return
+	else if (e.shiftKey)
+		chooseStart(String.fromCharCode(e.which + 32))
 	else
 		if(typedLetters == 0)
 			reset()
@@ -57,7 +58,7 @@ $ ->
 		$("#fastestTime").text(fastestTime)
 	if(Cookies.get("cookieUserConsent") != "true")
 		$("#cookies").css("visibility", "visible")
-	$("#a, #b, #c, #d, #e, #f, #g, #h, #i, #j, #k, #l, #m, #n, #o, #p, #q, #r, #s, #t, #u, #v, #w, #x, #y, #z").click -> chooseStart(this)
+	$("#a, #b, #c, #d, #e, #f, #g, #h, #i, #j, #k, #l, #m, #n, #o, #p, #q, #r, #s, #t, #u, #v, #w, #x, #y, #z").click -> chooseStart(this.innerHTML)
 
 # stopwatch
 # http://stackoverflow.com/questions/26329900/how-do-i-display-millisecond-in-my-stopwatch
@@ -105,7 +106,6 @@ computeWPM = ->
 	currentTime = new Date()
 	wpm = Math.floor((typedLetters)*1000*60/(5 * new Date(currentTime - timeBegan)))
 	Math.min(400, wpm)
-	# Math.min(400, Math.floor((typedLetters * 1000 * 60 / 5) / (new Date(currentTime - timeBegan))))
 
 
 @hideCookies = ->
@@ -120,8 +120,8 @@ chooseStart = (a) ->
 		currentId = "#" + currentChar
 		$(currentId).removeClass("inactive")
 	$("#fastestTime").removeClass("inactive")
-	# id = "#" + a.innerHTML
-	index = a.innerHTML.charCodeAt(0) - 96
+	# id = "#" + a
+	index = a.charCodeAt(0) - 96
 	if(index != 1)
 		$("#fastestTime").addClass("inactive")
 		for number in [1..index - 1]

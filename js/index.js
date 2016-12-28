@@ -45,6 +45,8 @@
       return reset();
     } else if (typedLetters + typedWrongLetters === 26) {
 
+    } else if (e.shiftKey) {
+      return chooseStart(String.fromCharCode(e.which + 32));
     } else {
       if (typedLetters === 0) {
         reset();
@@ -82,7 +84,7 @@
       $("#cookies").css("visibility", "visible");
     }
     return $("#a, #b, #c, #d, #e, #f, #g, #h, #i, #j, #k, #l, #m, #n, #o, #p, #q, #r, #s, #t, #u, #v, #w, #x, #y, #z").click(function() {
-      return chooseStart(this);
+      return chooseStart(this.innerHTML);
     });
   });
 
@@ -159,7 +161,7 @@
       $(currentId).removeClass("inactive");
     }
     $("#fastestTime").removeClass("inactive");
-    index = a.innerHTML.charCodeAt(0) - 96;
+    index = a.charCodeAt(0) - 96;
     if (index !== 1) {
       $("#fastestTime").addClass("inactive");
       for (number = j = 1, ref = index - 1; 1 <= ref ? j <= ref : j >= ref; number = 1 <= ref ? ++j : --j) {
