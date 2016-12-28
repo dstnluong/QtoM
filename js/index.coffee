@@ -1,39 +1,50 @@
 typedLetters = 0
-atoz = "abcdefghijklmnopqrstuvwxyz"
+typedWrongLetters = 0
+original = '<span id="a">a</span><span id="b">b</span><span id="c">c</span><span id="d">d</span><span id="e">e</span><span id="f">f</span><span id="g">g</span><span id="h">h</span><span id="i">i</span><span id="j">j</span><span id="k">k</span><span id="l">l</span><span id="m">m</span><span id="n">n</span><span id="o">o</span><span id="p">p</span><span id="q">q</span><span id="r">r</span><span id="s">s</span><span id="t">t</span><span id="u">u</span><span id="v">v</span><span id="w">w</span><span id="x">x</span><span id="y">y</span><span id="z">z</span>'
 if(Cookies.get("time")?)
 	fastestTime = Cookies.get("time")
 else
 	fastestTime = ""
 
 advanceChar = (char) ->
-	if(char - 97 == typedLetters)
-		nextCharacter = String.fromCharCode(char)
-		currentTyped = $("#typed").text()
-		$("#typeHere").html('<span id="typed">' + currentTyped + nextCharacter + '</span>' + atoz.substring(typedLetters + 1, 26))
-		console.log('yes')
+	nextCharacter = String.fromCharCode(char)
+	id = "#" + String.fromCharCode(typedLetters + typedWrongLetters + 97)
+	if(char - 97 == typedLetters + typedWrongLetters)
 		typedLetters++
-		if(typedLetters == 26)
-			stop()
-			if fastestTime.length != 0
-				fastestTime = Math.min(fastestTime, $("#time").text())
-			else
-				fastestTime = $("#time").text()
-			document.cookie = "time=" + fastestTime
-			$("#fastestTime").text(fastestTime)
-		$("#speed").text(computeWPM())
+		$(id).addClass("correct")
 	else
-		console.log('no')
+		typedWrongLetters++
+		$(id).addClass("wrong")
+	if(typedLetters == 26)
+		stop()
+		if fastestTime.length != 0
+			fastestTime = Math.min(fastestTime, $("#time").text())
+		else
+			fastestTime = $("#time").text()
+		document.cookie = "time=" + fastestTime
+		$("#fastestTime").text(fastestTime)
+	$("#speed").text(computeWPM())
 
 $(document).keypress (e)->
 	if(e.which == 13)
 		reset()
-	else if(typedLetters == 26)
+	else if(typedLetters + typedWrongLetters == 26)
 		return
 	else
 		if(typedLetters == 0)
 			reset()
 			start()
 		advanceChar(e.which)
+
+$(document).keydown (e) -> # dumb workaround
+	if(e.keyCode == 8)
+		idprev = "#" + String.fromCharCode(typedLetters + typedWrongLetters + 96)
+		if($(idprev).hasClass("correct"))
+			$(idprev).removeClass("correct")
+			typedLetters--
+		else if($(idprev).hasClass("wrong"))
+			$(idprev).removeClass("wrong")
+			typedWrongLetters--
 
 $ ->
 	$("#reset").click -> reset()
@@ -42,8 +53,6 @@ $ ->
 	else
 		$("#fastestTime").text(fastestTime)
 	if(Cookies.get("cookieUserConsent") != "true")
-		# hideCookies()
-	# else
 		$("#cookies").css("visibility", "visible")
 
 # stopwatch
@@ -76,8 +85,10 @@ clockRunning = ->
 
 reset = ->
 	console.log("resetted")
-	$("#typeHere").html('<span id="typed"></span>' + atoz)
+	# $("#typeHere").html('<span id="typed"></span>' + atoz)
+	$("#typeHere").html(original)
 	typedLetters = 0
+	typedWrongLetters = 0
 	clearInterval(started)
 	stoppedDuration = 0
 	timeBegan = null
@@ -85,7 +96,9 @@ reset = ->
 
 computeWPM = ->
 	currentTime = new Date()
-	Math.min(400, Math.floor((typedLetters * 1000 * 60 / 5) / (new Date(currentTime - timeBegan))))
+	wpm = Math.floor((typedLetters)*1000*60/(5 * new Date(currentTime - timeBegan)))
+	Math.min(400, wpm)
+	# Math.min(400, Math.floor((typedLetters * 1000 * 60 / 5) / (new Date(currentTime - timeBegan))))
 
 
 @hideCookies = ->
