@@ -25,6 +25,7 @@
 }
 
 #typeHere {
+	position: relative;
 	color: black;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -103,6 +104,16 @@
 	border-radius: 1em;
 	width: 4em;
 	margin:auto;
+}
+
+#help {
+	position: absolute;
+	margin: auto;
+	/* margin-left: 1em; */
+	font-size: 1em;
+	font-family: 'Raleway', sans-serif;
+	bottom: 0;
+	right: 0;
 }
 
 #cookies {
