@@ -3,7 +3,7 @@ Q ToM
 
 Inspiration
 -----------
-[This website](https://addcninblue.github.io/atoz/) was the inspiration for this project. I wanted to make it funner for people can't type fast, so this project was born.
+[This website](https://addcninblue.github.io/atoz/) was the inspiration for this project. I wanted to make it more fun for people can't type fast, so this project was born.
 
 How to Play
 -----------
