@@ -1,0 +1,39 @@
+#title {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 3em;
+}
+
+#box {
+  border-style: solid;
+  border-width: 0.5em;
+  border-radius: 0.5em;
+  background-color: white;
+  height:35vh;
+  margin: auto;
+  width:50vw;
+}
+
+#shortcuts {
+  text-align:center;
+}
+
+#help {
+  padding-left: 1em;
+}
+
+#enter {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+}
+
+#click {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+}
+
+#shift {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+}

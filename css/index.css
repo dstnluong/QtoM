@@ -1,131 +1,150 @@
 #title {
-	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	margin-top: 10%;
-	font-size: 3em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 3em;
 }
 
 #box {
-	border-style: solid;
-	border-width: 0.5em;
-	border-radius: 0.5em;
-	background-color: white;
-	height:35vh;
-	margin: auto;
-	width:50vw;
+  border-style: solid;
+  border-width: 0.5em;
+  border-radius: 0.5em;
+  background-color: white;
+  height:35vh;
+  margin: auto;
+  width:50vw;
 }
 
 #letters {
-	color: black;
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 2em;
-	padding-top: 1em;
-	font-weight: bold;
+  color: black;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  padding-top: 1em;
+  font-weight: bold;
 }
 
 #typeHere {
-	color: black;
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 2em;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
-	font-weight: bold;
-	border: 0.1em solid black;
-	border-radius: 0.1em;
-	clear: both;
-	width: 15em;
-	margin: 2em auto 1em auto;
+  position: relative;
+  color: black;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-weight: bold;
+  border: 0.1em solid black;
+  border-radius: 0.1em;
+  clear: both;
+  width: 15em;
+  margin: 2em auto 1em auto;
 }
 
-#typed{
-	color: #009688;
+.correct{
+  color: #009688;
+}
+
+.wrong{
+  color: #F44336;
+}
+
+.inactive {
+  color: #9E9E9E;
 }
 
 #space{
-	margin-top: 1em
+  margin-top: 1em
 }
 
 .left {
-	width: 33%;
-	float: left;
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 1em;
+  width: 33%;
+  float: left;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
 }
 
 .center {
-	margin: none;
-	width: 33%;
-	float: left;
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 1em;
+  margin: none;
+  width: 33%;
+  float: left;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
 }
 
 .right {
-	width: 33%;
-	float: left;
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 1em;
+  width: 33%;
+  float: left;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
 }
 
 #time{
-	font-weight:bold;
-	margin-top: 0;
+  font-weight:bold;
+  margin-top: 0;
 }
 
 #speed{
-	font-weight:bold;
-	margin-top: 0;
+  font-weight:bold;
+  margin-top: 0;
 }
 
 #fastestTime{
-	font-weight:bold;
-	margin-top: 0;
+  font-weight:bold;
+  margin-top: 0;
 }
 
 #reset {
-	text-align:center;
-	font-family: 'Raleway', sans-serif;
-	font-weight: bold;
-	border: 0.2em solid black;
-	border-radius: 1em;
-	width: 4em;
-	margin:auto;
+  text-align:center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  border: 0.15em solid black;
+  border-radius: 1em;
+  width: 4em;
+  margin:auto;
+}
+
+#help {
+  position: absolute;
+  margin: auto;
+  /* margin-left: 1em; */
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  bottom: 0;
+  right: 0;
 }
 
 #cookies {
-	z-index: 1;
-	height: 100vh;
-	width: 100vw;
-	position: fixed;
-	left: 0;
-	top: 0;
-	background-color: white;
-	visibility: hidden;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: white;
+  visibility: hidden;
 }
 
 #cookietext {
-	margin-top: 40vh;
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2em;
+  margin-top: 40vh;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
 }
 
 #continue {
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2em;
-	border: 0.1em solid black;
-	border-radius: 1em;
-	width: 7em;
-	margin: auto;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  border: 0.1em solid black;
+  border-radius: 1em;
+  width: 7em;
+  margin: auto;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
