@@ -53,7 +53,7 @@
     } else if (e.shiftKey) {
       return chooseStart(String.fromCharCode(e.which + 32));
     } else {
-      if (typedLetters === 0) {
+      if (typedLetters + typedWrongLetters === 0) {
         reset();
         typedLetters = numberOfStartingLetters;
         start();
