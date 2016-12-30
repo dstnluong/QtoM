@@ -1,3 +1,5 @@
+qwerty = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", ""n, "m"]
+
 numberOfStartingLetters = 0
 typedLetters = 0
 typedWrongLetters = 0
@@ -9,7 +11,7 @@ else
 advanceChar = (char) ->
 	nextCharacter = String.fromCharCode(char)
 	id = "#" + String.fromCharCode(typedLetters + typedWrongLetters + 97)
-	if(char - 97 == typedLetters + typedWrongLetters)
+	if(char - 97 == qwerty[typedLetters + typedWrongLetters])
 		typedLetters++
 		$(id).addClass("correct")
 	else
