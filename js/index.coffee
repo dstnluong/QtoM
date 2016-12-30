@@ -10,8 +10,8 @@ else
 
 advanceChar = (char) ->
 	nextCharacter = String.fromCharCode(char)
-	id = "#" + String.fromCharCode(typedLetters + typedWrongLetters + 97)
-	if(char - 97 == qwerty[typedLetters + typedWrongLetters])
+	id = "#" + qwerty[typedLetters + typedWrongLetters]
+	if(char == qwerty[typedLetters + typedWrongLetters].charCodeAt(0))
 		typedLetters++
 		$(id).addClass("correct")
 	else

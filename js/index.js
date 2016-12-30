@@ -19,8 +19,11 @@
   advanceChar = function(char) {
     var id, nextCharacter;
     nextCharacter = String.fromCharCode(char);
-    id = "#" + String.fromCharCode(typedLetters + typedWrongLetters + 97);
-    if (char - 97 === qwerty[typedLetters + typedWrongLetters]) {
+    id = "#" + qwerty[typedLetters + typedWrongLetters];
+    console.log(id + nextCharacter);
+    console.log(char);
+    console.log(qwerty[typedLetters + typedWrongLetters].charCodeAt(0));
+    if (char === qwerty[typedLetters + typedWrongLetters].charCodeAt(0)) {
       typedLetters++;
       $(id).addClass("correct");
     } else {
