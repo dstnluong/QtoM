@@ -11,4 +11,4 @@ To play this game, just start swiping from q to m on your keyboard. It's pretty 
 
 Bugs
 ----
-If there's a bug, feel free to create an issue. :)
+If there's a bug, feel free to create an issue and I will make @addcninblue fix it. :)
